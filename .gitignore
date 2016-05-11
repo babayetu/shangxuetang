@@ -1,0 +1,14 @@
+dist
+.gitignore.bak
+.idea/
+application.properties.perf
+friendservice.iml
+perf_mk.sh
+mk.sh
+tags
+target/
+*.log
+.classpath
+.project
+.settings/
+
