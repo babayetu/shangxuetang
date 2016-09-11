@@ -1,5 +1,7 @@
 package com.yinnut.udp;
 
+import java.io.ByteArrayInputStream;
+import java.io.DataInputStream;
 import java.io.IOException;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -10,7 +12,7 @@ import java.net.SocketException;
  * @author liujingjing
  *
  */
-public class MyServer {
+public class DoubleServer {
 
 	public static void main(String[] args) {
 		DatagramSocket server = null;
@@ -26,7 +28,13 @@ public class MyServer {
 			//5.分析数据
 			byte[] data = dp.getData();
 			int length = dp.getLength();
-			System.out.println(new String(data,0,length));
+			
+			ByteArrayInputStream bais = new ByteArrayInputStream(data,0,length);
+			DataInputStream dis = new DataInputStream(bais);
+
+			Double dd = dis.readDouble();
+			System.out.println(dd);
+			
 			//6.释放资源
 			 server.close();
 		} catch (SocketException e) {
