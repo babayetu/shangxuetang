@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<binding value-style="attribute">
+  <mapping class="netty.authority.ch101112.Order" name="order">
+    <value name="order-number" field="orderNumber"/>
+    <structure field="customer" usage="optional" name="customer">
+      <value style="element" name="name" field="name" usage="optional"/>
+    </structure>
+    <structure field="billTo" usage="optional" name="bill-to">
+      <value style="element" name="nation" field="nation" usage="optional"/>
+      <value style="element" name="province" field="province" usage="optional"/>
+      <value style="element" name="city" field="city" usage="optional"/>
+      <value style="element" name="street" field="street" usage="optional"/>
+      <value style="element" name="post-code" field="postCode" usage="optional"/>
+    </structure>
+    <structure field="shipTo" usage="optional" name="ship-to">
+      <value style="element" name="nation" field="nation" usage="optional"/>
+      <value style="element" name="province" field="province" usage="optional"/>
+      <value style="element" name="city" field="city" usage="optional"/>
+      <value style="element" name="street" field="street" usage="optional"/>
+      <value style="element" name="post-code" field="postCode" usage="optional"/>
+    </structure>
+  </mapping>
+</binding>
